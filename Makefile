@@ -6,8 +6,8 @@ help:
 	@echo ''
 
 generate:
-	./overviewer.py --config=config
-	./overviewer.py --config=config --genpoi
+	python overviewer/overviewer.py --config=config
+	python overviewer/overviewer.py --config=config --genpoi
 
 setup:
 	git submodule update --init
