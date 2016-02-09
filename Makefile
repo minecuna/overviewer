@@ -1,22 +1,17 @@
 help:
-	@echo '   make clean                       remove existing world backup'
-	@echo '   make move                        backup existing world and copy latest save '
+	@echo ''
+	@echo 'Minecuna Map Builder Help:'
 	@echo '   make generate                    generate the map'
-	@echo '   make upload                      upload to S3'
-	@echo '   make update                      all of the above'
-
-clean:
-	rm -rf world.old
-
-move:
-	mv world{,.old}
-	mv ./saves/Minecuna world
+	@echo '   make setup                       set up local env'
+	@echo ''
 
 generate:
 	./overviewer.py --config=config
 	./overviewer.py --config=config --genpoi
 
-upload:
-	s3cmd --config=s3cfg sync --no-progress --delete-removed ./output/* s3://map.minecuna.co.uk
+setup:
+	git submodule update --init
+	pip install numpy
+	bin/build-overviewer
 
-update: clean move generate upload
+.PHONY: generate setup
