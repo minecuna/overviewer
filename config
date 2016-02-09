@@ -309,6 +309,6 @@ renders["theend"] = {
     'minzoom': MINZOOM,
 }
 
-customwebassets = "/Users/george/Projects/overviewer/assets/"
-worlds["minecuna"] = "/Users/george/Projects/overviewer/world"
-outputdir = "/Users/george/Projects/overviewer/output"
+customwebassets = "./assets/"
+worlds["minecuna"] = "./world"
+outputdir = "./output"
