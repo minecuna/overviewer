@@ -11,7 +11,7 @@ generate:
 
 setup:
 	git submodule update --init
-	pip install numpy
+	pip install -r requirements.txt
 	bin/build-overviewer
 
 .PHONY: generate setup
