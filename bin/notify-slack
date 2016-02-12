@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+from furl import furl
+import requests
+
+
+if len(sys.argv) < 3:
+    sys.stderr.write('Usage: bin/notify-slack CHANNEL MESSAGE\n')
+    sys.exit(1)
+
+try:
+    token = os.environ['SLACK_TOKEN']
+except KeyError:
+    sys.stderr.write('No SLACK_TOKEN set in the env')
+    sys.exit(1)
+
+url = furl('https://slack.com/api/chat.postMessage')
+url.args['token'] = token
+url.args['channel'] = '#' + sys.argv[1]  # prefix channel with hash
+url.args['text'] = sys.argv[2]
+url.args['username'] = 'robot'
+url.args['icon_url'] = 'http://i.imgur.com/VdZPQFI.jpg'
+url.args['pretty'] = 1
+
+r = requests.get(url)
+if not r.ok:
+    sys.stderr.write(r.content + '\n')
+    sys.exit(1)

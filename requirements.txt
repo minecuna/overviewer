@@ -1,2 +1,4 @@
+furl
 numpy
 pillow
+requests
