@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+# Based on:
+# http://sina.salek.ws/content/how-mirrorsync-remote-ftp-folder-local-folder
+
+local="."  # where to put directory locally
+remote="world"  # directory on FTP server
+
+lftp -f "
+open $FTP_HOST
+user $FTP_USER $FTP_PASS
+mirror --delete --verbose $remote $local
+bye
+"
