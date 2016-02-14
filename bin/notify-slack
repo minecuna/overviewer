@@ -14,7 +14,7 @@ if len(sys.argv) < 3:
 try:
     token = os.environ['SLACK_TOKEN']
 except KeyError:
-    sys.stderr.write('No SLACK_TOKEN set in the env')
+    sys.stderr.write('No SLACK_TOKEN set in the env. You can generate one here: https://api.slack.com/web')
     sys.exit(1)
 
 url = furl('https://slack.com/api/chat.postMessage')
