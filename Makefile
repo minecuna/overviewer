@@ -9,9 +9,15 @@ generate:
 	python overviewer/overviewer.py --config=config
 	python overviewer/overviewer.py --config=config --genpoi
 
+run:
+	bin/notify-slack dev "Map Generation Started"
+	bin/update-world
+	make generate
+	bin/notify-slack dev "Map Generation Finished"
+
 setup:
 	git submodule update --init
 	pip install -r requirements.txt
 	bin/build-overviewer
 
-.PHONY: generate setup
+.PHONY: generate run setup
