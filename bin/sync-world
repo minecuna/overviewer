@@ -5,7 +5,7 @@ set -e
 # Based on:
 # http://sina.salek.ws/content/how-mirrorsync-remote-ftp-folder-local-folder
 
-local="."  # where to put directory locally
+local="world"  # where to put directory locally
 remote="world"  # directory on FTP server
 
 lftp -f "
