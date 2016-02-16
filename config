@@ -63,6 +63,13 @@ overworld_pois = [{
     'name': 'Arctic Base 1',
     'description': 'Appropriate security clearance is required to access this facility.',
 }, {
+    'id': 'base',
+    'x': 1128,
+    'y': 64,
+    'z': 1729,
+    'name': "Lanithos' Base",
+    'description': 'Construction of underwater supervillain base is a work in progress.',
+}, {
     'id': 'town',
     'x': -228,
     'y': 64,
