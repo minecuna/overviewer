@@ -8,7 +8,7 @@ set -e
 local="world"  # where to put directory locally
 remote="world"  # directory on FTP server
 
-lftp -f "
+lftp -c "
 open $FTP_HOST
 user $FTP_USER $FTP_PASS
 mirror --delete --verbose $remote $local
