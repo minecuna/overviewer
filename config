@@ -190,10 +190,19 @@ def mines(poi):
             return poi['name'] + '\n'
 
 def players(poi):
-    url_base = '/avatars/{}.png'
-    if poi['id'] == 'Player':
-        poi['icon'] = url_base.format(poi['EntityId'].lower())
-        return poi['EntityId']
+    if poi['id'] != 'Player':
+        return None
+
+    username = poi['EntityId']
+
+    if username == 'shankyourmum':  # ffs
+        return None
+
+    avatar_url = 'https://crafatar.com/avatars/{}?overlay&default=MHF_Steve&size=32'
+    poi['icon'] = avatar_url.format(username)
+
+    html = '<div><span class="name">{}</span></div>'
+    return html.format(username)
 
 def towns(poi):
     html = '<div><span class="name">{}</span><span class="coordinates">{x} | {y} | {z}</span><span class="description">{}</span></div>'
