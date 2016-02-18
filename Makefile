@@ -12,6 +12,7 @@ generate:
 
 run:
 	bin/notify-slack dev "Map Generation Started"
+	git pull
 	bin/sync-world
 	make generate
 	bin/notify-slack dev "Map Generation Finished"
