@@ -198,6 +198,8 @@ def players(poi):
     if username == 'shankyourmum':  # ffs
         return None
 
+    # http://wiki.vg/Mojang_API#UUID_-.3E_Profile_.2B_Skin.2FCape
+
     avatar_url = 'https://crafatar.com/avatars/{}?overlay&default=MHF_Steve&size=32'
     poi['icon'] = avatar_url.format(username)
 
