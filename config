@@ -113,9 +113,9 @@ overworld_pois = [{
     'description': 'Roger\s Greatest Foe.',
 }, {
     'id': 'farm',
-    'x': 190,
-    'y': 130,
-    'z': 297,
+    'x': 184,
+    'y': 126,
+    'z': 304,
     'name': 'Passive Mob Farm',
     'description': 'Zombie Noms',
 }, {
