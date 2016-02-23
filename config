@@ -132,6 +132,13 @@ overworld_pois = [{
     'z': 275,
     'name': 'Iron Hotel',
     'description': 'You must pay the Iron Price.',
+}, {
+    'id': 'base',
+    'x': -712,
+    'y': 63,
+    'z': -164,
+    'name': 'First Fortress',
+    'description': 'The crappy cobblestone shack conceals a mighty secret.',
 }]
 
 # MARKER FILTERS
