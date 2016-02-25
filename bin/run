@@ -2,7 +2,7 @@
 
 set -e
 
-python="$HOME/overviewer/.direnv/python-2.7.6/bin/python"
+python="$HOME/overviewer/.direnv/python-2.7.11/bin/python"
 
 $python bin/notify-slack dev "Map Generation Started"
 
