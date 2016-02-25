@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+python="$HOME/overviewer/.direnv/python-2.7.6/bin/python"
+
+$python bin/notify-slack dev "Map Generation Started"
+
+git pull
+bin/sync-world
+$python overviewer/overviewer.py --config=config
+$python overviewer/overviewer.py --config=config --genpoi
+
+$python bin/notify-slack dev "Map Generation Finished"
